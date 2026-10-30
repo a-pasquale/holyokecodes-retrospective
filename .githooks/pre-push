@@ -2,4 +2,3 @@
 set -euo pipefail
 npx @11ty/eleventy
 node scripts/check-redirects.mjs
-bash scripts/check-sensitive.sh

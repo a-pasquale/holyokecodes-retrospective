@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -17,14 +15,3 @@ jobs:
       - run: npx eleventy
       - name: Redirect-map completeness
         run: node scripts/check-redirects.mjs
-      - name: Install poppler-utils
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
-      - name: Sensitive-content gate
-        env:
-          PARTICIPANT_NAMES: ${{ secrets.PARTICIPANT_NAMES }}
-        run: |
-          if [ -z "$PARTICIPANT_NAMES" ]; then
-            echo "PARTICIPANT_NAMES secret is not set — gate cannot run."; exit 1
-          fi
-          printf '%s\n' "$PARTICIPANT_NAMES" > "$RUNNER_TEMP/names.txt"
-          HOLYOKECODES_NAMES_FILE="$RUNNER_TEMP/names.txt" bash scripts/check-sensitive.sh

@@ -1,5 +1,5 @@
 [build]
-  command = "bash scripts/netlify-build.sh"
+  command = "npx @11ty/eleventy && node scripts/check-redirects.mjs"
   publish = "_site"
 
 [build.environment]

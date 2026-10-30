@@ -21,9 +21,9 @@ All copy is past tense.
 npm install
 git config core.hooksPath .githooks
 ```
-The pre-push hook runs the build, the redirect-completeness check, and the
-sensitive-content gate. The gate requires a private names file at
-`~/.holyokecodes/participant-names.txt` (never committed) and fails loudly
-if the file is missing OR empty. The same gate also runs in CI and in the
-Netlify build (via the PARTICIPANT_NAMES secret), so bypassing the local
-hook does not bypass the gate.
+The pre-push hook runs the build and the redirect-completeness check.
+
+`npm run check:sensitive` is an optional manual check. It scans the content
+against a private names file at `~/.holyokecodes/participant-names.txt`
+(never committed). Run it yourself before publishing new content if you have
+that file.
