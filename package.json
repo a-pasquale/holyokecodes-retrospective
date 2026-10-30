@@ -1,0 +1,19 @@
+{
+  "name": "holyokecodes-retrospective",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "check:redirects": "node scripts/check-redirects.mjs",
+    "check:sensitive": "bash scripts/check-sensitive.sh",
+    "check:links": "linkinator http://localhost:8899 --recurse --silent"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "http-server": "^14.1.1",
+    "linkinator": "^6.1.1",
+    "sharp": "^0.33.5"
+  }
+}

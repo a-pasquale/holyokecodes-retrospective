@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {% endif %}Holyoke Codes</title>
+  <meta name="description" content="{{ description or 'Holyoke Codes (2014–2023) — the historical record of free coding and robotics programs for kids in Holyoke, Massachusetts.' }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/">
+        <img src="/media/brand/holyoke-codes.jpg" alt="Holyoke Codes — Rosie the robot mascot" width="502" height="154">
+      </a>
+      <div class="site-header__right">
+        <div class="utility-tab" role="note">Holyoke Codes ran from 2014 to 2023. This site is its historical record.</div>
+        <nav class="icon-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/timeline/"><img src="/media/icons/calendar.png" alt="" width="60" height="51"><span>Timeline</span></a></li>
+            <li><a href="/programs/"><img src="/media/icons/programs-nav.png" alt="" width="75" height="75"><span>Programs</span></a></li>
+            <li><a href="/news/"><img src="/media/icons/news.png" alt="" width="60" height="51"><span>News</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="gradient-bar" aria-hidden="true"></div>
+  <main id="main" class="{{ mainClass or 'page-main' }}">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="brand" href="/">
+        <img src="/media/brand/holyoke-codes-white.png" alt="Holyoke Codes" width="502" height="154">
+      </a>
+      <div class="site-footer__right">
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="/people/">People &amp; partners</a></li>
+            <li><a href="/timeline/">Timeline</a></li>
+          </ul>
+        </nav>
+        <p class="footer-descriptor">Holyoke Codes ran free coding and robotics programs for kids from 2014 to 2023 at the Massachusetts Green High Performance Computing Center in Holyoke, MA.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
